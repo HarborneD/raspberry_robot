@@ -23,16 +23,22 @@ class Robot(object):
         self.forward_pins = [self.pins["left_motor_forward_pin"], self.pins["left_motor_backward_pin"] ]
         self.backward_pins = [self.pins["right_motor_forward_pin"], self.pins["right_motor_backward_pin"] ]
 
+
+        for pin in self.speed_pins:
+            GPIO.setup(pin, GPIO.OUT)
+
+        for pin in self.forward_pins:
+            GPIO.setup(pin, GPIO.OUT)
+
+        for pin in self.backward_pins:
+            GPIO.setup(pin, GPIO.OUT)
+
+
         self.speed_pwms = {}
         self.speed_pwms["left"] = GPIO.PWM(self.pins["left_motor_speed_pin"], 100)
         self.speed_pwms["right"] = GPIO.PWM(self.pins["right_motor_speed_pin"], 100)
         
 
-        for key in self.forward_pins:
-            GPIO.setup(self.pins[key], GPIO.OUT)
-
-        for key in self.backward_pins:
-            GPIO.setup(self.pins[key], GPIO.OUT)
 
 
     def MoveForward(self):
