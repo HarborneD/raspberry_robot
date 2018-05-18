@@ -35,8 +35,8 @@ class Robot(object):
 
 
         self.speed_pwms = {}
-        self.speed_pwms["left"] = GPIO.PWM(self.pins["left_motor_speed_pin"], 100)
-        self.speed_pwms["right"] = GPIO.PWM(self.pins["right_motor_speed_pin"], 100)
+        self.speed_pwms["left"] = GPIO.PWM(self.pins["left_motor_speed_pin"], 1000)
+        self.speed_pwms["right"] = GPIO.PWM(self.pins["right_motor_speed_pin"], 1000)
         
 
 
