@@ -131,21 +131,21 @@ if __name__ == '__main__':
     robot.SetSpeed(0.2)
 
     robot.MoveForward()
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.SpinClockwise()
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.MoveBackward()
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.SpinAntiClockwise()
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.MoveForward()
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.TurnLeft(0.2)
-    time.sleep(0.3)
+    time.sleep(1)
 
     robot.Stop()
