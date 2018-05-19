@@ -24,7 +24,7 @@ class Robot(object):
         }
 
         self.speed_pins = [self.pins["left_motor_speed_pin"], self.pins["right_motor_speed_pin"] ]
-        self.forward_pins = [self.pins["left_motor_forward_pin"], self.pins["rights_motor_forward_pin"] ]
+        self.forward_pins = [self.pins["left_motor_forward_pin"], self.pins["right_motor_forward_pin"] ]
         self.backward_pins = [self.pins["left_motor_backward_pin"], self.pins["right_motor_backward_pin"] ]
 
 
