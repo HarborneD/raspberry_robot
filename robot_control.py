@@ -14,13 +14,13 @@ class Robot(object):
         
 
         self.pins = {
-        "left_motor_speed_pin":15,
-        "left_motor_forward_pin":29,
-        "left_motor_backward_pin":22,
+        "left_motor_speed_pin":15, #green
+        "left_motor_forward_pin":29, #yellow
+        "left_motor_backward_pin":22, #blue
 
-        "right_motor_speed_pin":11,
-        "right_motor_forward_pin":7,
-        "right_motor_backward_pin":16,
+        "right_motor_speed_pin":11, #red
+        "right_motor_forward_pin":7, #orange
+        "right_motor_backward_pin":16, #brown
         }
 
         self.speed_pins = [self.pins["left_motor_speed_pin"], self.pins["right_motor_speed_pin"] ]
