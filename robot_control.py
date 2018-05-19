@@ -10,12 +10,12 @@ class Robot(object):
         super(Robot, self).__init__()
         
         self.pins = {
-        "left_motor_speed_pin":13,
-        "left_motor_forward_pin":18,
+        "left_motor_speed_pin":15,
+        "left_motor_forward_pin":29,
         "left_motor_backward_pin":22,
 
         "right_motor_speed_pin":11,
-        "right_motor_forward_pin":12,
+        "right_motor_forward_pin":7,
         "right_motor_backward_pin":16,
         }
 
