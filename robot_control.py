@@ -1,9 +1,10 @@
 import RPi.GPIO as GPIO
 import time
 
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 
-GPIO.cleanup()
+
 
 
 class Robot(object):
@@ -125,6 +126,9 @@ class Robot(object):
         self.speed_pwms["left"].start(speed)
         self.speed_pwms["right"].start(speed/2)
 
+    def CleanUp(self):
+        GPIO.cleanup()
+
 
 if __name__ == '__main__':
     robot = Robot()
@@ -150,3 +154,5 @@ if __name__ == '__main__':
     time.sleep(1)
 
     robot.Stop()
+
+    robot.CleanUp()
