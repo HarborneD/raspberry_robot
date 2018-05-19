@@ -11,8 +11,8 @@ GPIO.setup(29, GPIO.OUT)
 left_speed = GPIO.PWM(15, 1000)
 left_speed.start(90)
 
- GPIO.output(29, GPIO.HIGH)
+GPIO.output(29, GPIO.HIGH)
 
- time.sleep(1)
+time.sleep(1)
 
- GPIO.output(29, GPIO.LOW)
+GPIO.output(29, GPIO.LOW)
