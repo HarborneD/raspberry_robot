@@ -25,12 +25,15 @@ class Robot(object):
 
 
         for pin in self.speed_pins:
+            print("setting up pin:"+str(pin))
             GPIO.setup(pin, GPIO.OUT)
 
         for pin in self.forward_pins:
+            print("setting up pin:"+str(pin))
             GPIO.setup(pin, GPIO.OUT)
 
         for pin in self.backward_pins:
+            print("setting up pin:"+str(pin))
             GPIO.setup(pin, GPIO.OUT)
 
 
