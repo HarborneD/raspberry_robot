@@ -128,7 +128,7 @@ class Robot(object):
 if __name__ == '__main__':
     robot = Robot()
 
-    robot.SetSpeed(0.2)
+    robot.SetSpeed(90)
 
     robot.MoveForward()
     time.sleep(1)
@@ -145,7 +145,7 @@ if __name__ == '__main__':
     robot.MoveForward()
     time.sleep(1)
 
-    robot.TurnLeft(0.2)
+    robot.TurnLeft(90)
     time.sleep(1)
 
     robot.Stop()
