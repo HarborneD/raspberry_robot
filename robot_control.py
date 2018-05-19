@@ -3,12 +3,16 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
+GPIO.cleanup()
+
 
 class Robot(object):
     """docstring for Robot"""
     def __init__(self):
         super(Robot, self).__init__()
         
+        
+
         self.pins = {
         "left_motor_speed_pin":15,
         "left_motor_forward_pin":29,
