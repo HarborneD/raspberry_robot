@@ -5,8 +5,8 @@ GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 
 
-TRIG = 35                                   #Associate pin 23 to TRIG
-ECHO = 37                                  #Associate pin 24 to ECHO
+TRIG = 37                                   #Associate pin 23 to TRIG
+ECHO = 35                                  #Associate pin 24 to ECHO
 
 print "Distance measurement in progress"
 
