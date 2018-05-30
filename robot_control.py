@@ -22,6 +22,9 @@ class Robot(object):
         "right_motor_speed_pin":11, #red
         "right_motor_forward_pin":7, #orange
         "right_motor_backward_pin":16, #brown
+
+        "ultrasonic_trig":37,                                   
+        "ultrasonic_echo":35                                  
         }
 
         self.speed_pins = [self.pins["left_motor_speed_pin"], self.pins["right_motor_speed_pin"] ]
