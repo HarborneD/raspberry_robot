@@ -99,21 +99,23 @@ class Robot(object):
         if(speed < 1 and speed > 0):
             speed = speed*100
 
-        for pwm in self.speed_pwms:
-            self.speed_pwms[pwm].start(speed)
+        self.speed_pwms["left"].start(speed)
+        self.speed_pwms["right"].start(speed*0.5)
+        # for pwm in self.speed_pwms:
+        #     self.speed_pwms[pwm].start(speed)
 
     def SetSpeedLeft(self,speed):
         if(speed < 1 and speed > 0):
             speed = speed*100
 
-        self.speed_pwms["left"].start(speed*0.5)
+        self.speed_pwms["left"].start(speed)
 
 
     def SetSpeedRight(self,speed):
         if(speed < 1 and speed > 0):
             speed = speed*100
 
-        self.speed_pwms["right"].start(speed)
+        self.speed_pwms["right"].start(speed*0.5)
     
 
     def TurnLeft(self,speed):
