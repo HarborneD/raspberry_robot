@@ -106,7 +106,7 @@ class Robot(object):
         if(speed < 1 and speed > 0):
             speed = speed*100
 
-        self.speed_pwms["left"].start(speed)
+        self.speed_pwms["left"].start(speed*0.5)
 
 
     def SetSpeedRight(self,speed):
