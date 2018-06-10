@@ -9,5 +9,13 @@ GPIO.setmode(GPIO.BOARD)
 
 robot = Robot()
 
+turn_distance = 10
+
 while True:
-    print(robot.GetUltraSonicDistance())      
+    distance = robot.GetUltraSonicDistance()
+
+    if(distance < turn_distance):
+        robot.SpinClockwise()
+        time.sleep(1)
+    else:
+        robot.MoveForward()   
