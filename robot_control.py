@@ -133,18 +133,18 @@ class Robot(object):
 
 
     def GetUltraSonicDistance(self,calibration=0.5):
-        GPIO.output(TRIG, False)                 #Set TRIG as LOW
+        GPIO.output(self.pins["ultrasonic_trig"], False)                 #Set TRIG as LOW
         print "Waitng For Sensor To Settle"
         time.sleep(0.5)                            #Delay of 2 seconds
 
-        GPIO.output(TRIG, True)                  #Set TRIG as HIGH
+        GPIO.output(self.pins["ultrasonic_trig"], True)                  #Set TRIG as HIGH
         time.sleep(0.00001)                      #Delay of 0.00001 seconds
-        GPIO.output(TRIG, False)                 #Set TRIG as LOW
+        GPIO.output(self.pins["ultrasonic_trig"], False)                 #Set TRIG as LOW
 
-        while GPIO.input(ECHO)==0:               #Check whether the ECHO is LOW
+        while GPIO.input(self.pins["ultrasonic_echo"])==0:               #Check whether the ECHO is LOW
             pulse_start = time.time()              #Saves the last known time of LOW pulse
 
-        while GPIO.input(ECHO)==1:               #Check whether the ECHO is HIGH
+        while GPIO.input(self.pins["ultrasonic_echo"])==1:               #Check whether the ECHO is HIGH
             pulse_end = time.time()                #Saves the last known time of HIGH pulse 
 
         pulse_duration = pulse_end - pulse_start #Get pulse duration to a variable
