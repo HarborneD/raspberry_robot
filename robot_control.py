@@ -142,10 +142,10 @@ class Robot(object):
         GPIO.output(TRIG, False)                 #Set TRIG as LOW
 
         while GPIO.input(ECHO)==0:               #Check whether the ECHO is LOW
-        pulse_start = time.time()              #Saves the last known time of LOW pulse
+            pulse_start = time.time()              #Saves the last known time of LOW pulse
 
         while GPIO.input(ECHO)==1:               #Check whether the ECHO is HIGH
-        pulse_end = time.time()                #Saves the last known time of HIGH pulse 
+            pulse_end = time.time()                #Saves the last known time of HIGH pulse 
 
         pulse_duration = pulse_end - pulse_start #Get pulse duration to a variable
 
