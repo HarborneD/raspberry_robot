@@ -9,9 +9,9 @@ GPIO.setmode(GPIO.BOARD)
 
 robot = Robot()
 
-robot.SetSpeed(90)
+robot.SetSpeed(70)
 
-turn_distance = 10
+turn_distance = 20
 
 while True:
     distance = robot.GetUltraSonicDistance()
