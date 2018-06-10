@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BOARD)
 
 robot = Robot()
 
-robot.SetSpeed(70)
+robot.SetSpeed(90)
 
 turn_distance = 20
 
