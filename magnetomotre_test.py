@@ -1,5 +1,3 @@
-Raspberry pi code:
-
 import smbus
 import time
 import math
