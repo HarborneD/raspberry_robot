@@ -12,7 +12,7 @@ def read_word(adr):
     high = bus.read_byte_data(address, adr)
     low = bus.read_byte_data(address, adr+1)
     val = (high<< 8) + low
-        return val
+    return val
 
 def read_word_2c(adr):
     val = read_word(adr)
