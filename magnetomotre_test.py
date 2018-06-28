@@ -1,46 +1,48 @@
+Raspberry pi code:
+
 import smbus
 import time
 import math
-
 bus = smbus.SMBus(1)
-address = 0x1e
+address = 0x0d
 
 
-def read_byte(adr):
+def read_byte(adr): #communicate with compass
     return bus.read_byte_data(address, adr)
 
 def read_word(adr):
     high = bus.read_byte_data(address, adr)
     low = bus.read_byte_data(address, adr+1)
-    val = (high << 8) + low
-    return val
+    val = (high<< 8) + low
+        return val
 
 def read_word_2c(adr):
     val = read_word(adr)
-    if (val >= 0x8000):
-        return -((65535 - val) + 1)
+    if (val>= 0x8000):
+        return -((65535 - val)+1)
     else:
         return val
 
-def write_byte(adr, value):
+def write_byte(adr,value):
     bus.write_byte_data(address, adr, value)
 
-write_byte(0, 0b01110000) # Set to 8 samples @ 15Hz
-write_byte(1, 0b00100000) # 1.3 gain LSb / Gauss 1090 (default)
-write_byte(2, 0b00000000) # Continuous sampling
+for i in range(0,50):
+    write_byte(11, 0b01110000)
+    write_byte(10, 0b00100000)
+    write_byte(9, 0b00011101)
+    scale = 0.92
+    x_offset = -10
+    y_offset = 10
+    x_out = (read_word_2c(0)- x_offset+2) * scale #calculating x,y,z coordinates
+    y_out = (read_word_2c(2)- y_offset+2)* scale
+    z_out = read_word_2c(4) * scale
+    bearing = math.atan2(y_out, x_out)+.48 #0.48 is correction value
 
-scale = 0.92
+    if(bearing < 0):
+        bearing += 2* math.pi
 
-x_out = read_word_2c(3) * scale
-y_out = read_word_2c(7) * scale
-z_out = read_word_2c(5) * scale
-
-bearing  = math.atan2(y_out, x_oeut) 
-if (bearing < 0):
-    bearing += 2 * math.pi
-
-print("x_out",x_out)
-print("y_out",y_out)
-print("z_out",z_out)
-
-print("Bearing: ", math.degrees(bearing))
+    print "Bearing:", math.degrees(bearing)
+    print "x: ", x_out
+    print "y: ", y_out
+    print "z: ", z_out
+    time.sleep(3)
