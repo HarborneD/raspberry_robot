@@ -3,7 +3,7 @@ import time
 import math
 
 bus = smbus.SMBus(1)
-address = 0x0d
+address = 0x1e
 
 
 def read_byte(adr):
