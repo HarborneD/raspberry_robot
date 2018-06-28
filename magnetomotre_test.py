@@ -2,8 +2,8 @@ import smbus
 import time
 import math
 
-bus = smbus.SMBus(0)
-address = 0x1e
+bus = smbus.SMBus(1)
+address = 0x0d
 
 
 def read_byte(adr):
@@ -35,7 +35,7 @@ x_out = read_word_2c(3) * scale
 y_out = read_word_2c(7) * scale
 z_out = read_word_2c(5) * scale
 
-bearing  = math.atan2(y_out, x_out) 
+bearing  = math.atan2(y_out, x_oeut) 
 if (bearing < 0):
     bearing += 2 * math.pi
 
